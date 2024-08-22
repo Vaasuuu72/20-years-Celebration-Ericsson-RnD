@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>20 years RnD ERICSSON Celebration</title>
+    <title>Form Submission</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -21,6 +21,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             max-width: 400px;
             width: 100%;
+            text-align: center;
         }
         h2 {
             margin-bottom: 20px;
@@ -49,16 +50,66 @@
         button:hover {
             background-color: #45a049;
         }
+        .response-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none; /* Hidden by default */
+        }
+        .success {
+            background-color: #dff0d8;
+            color: #3c763d;
+            border: 1px solid #d6e9c6;
+        }
+        .error {
+            background-color: #f2dede;
+            color: #a94442;
+            border: 1px solid #ebccd1;
+        }
     </style>
 </head>
 <body>
     <div class="form-container">
-        <h2>Register here!!!</h2>
-        <form method="POST" action="https://script.google.com/macros/s/AKfycbw2gSGQiL7CQ_OzbIL1cG7scQjEsWg8lMyllxSnXmvY9ZrB1nFo9AeEPtBvfjnhAqkE3Q/exec">
+        <h2>Submit Your Information</h2>
+        <form id="infoForm" action="https://script.google.com/macros/s/AKfycbw2gSGQiL7CQ_OzbIL1cG7scQjEsWg8lMyllxSnXmvY9ZrB1nFo9AeEPtBvfjnhAqkE3Q/exec">
             <input name="FirstName MiddleName" type="text" placeholder="First Name Middle Name" required>
             <input name="LastName" type="text" placeholder="Last Name" required>
             <button type="submit">Send</button>
         </form>
+        <div id="responseMessage" class="response-message"></div>
     </div>
+
+    <script>
+        document.getElementById('infoForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting the traditional way
+
+            const formData = new FormData(event.target);
+            const data = new URLSearchParams(formData);
+
+            fetch('', {
+                method: 'POST',
+                body: data
+            })
+            .then(response => response.json())
+            .then(result => {
+                const responseMessage = document.getElementById('responseMessage');
+                responseMessage.style.display = 'block';
+
+                if (result.result === 'success') {
+                    responseMessage.className = 'response-message success';
+                    responseMessage.innerHTML = `<strong>Success!</strong> Your submission was successful. <br><strong>Name:</strong> ${result.name}<br><strong>Table Number:</strong> ${result.tableNumber}`;
+                } else {
+                    responseMessage.className = 'response-message error';
+                    responseMessage.innerHTML = `<strong>Error!</strong> ${result.error}`;
+                }
+            })
+            .catch(error => {
+                const responseMessage = document.getElementById('responseMessage');
+                responseMessage.className = 'response-message error';
+                responseMessage.style.display = 'block';
+                responseMessage.innerHTML = `<strong>Error!</strong> Something went wrong. Please try again later.`;
+            });
+        });
+    </script>
 </body>
 </html>
