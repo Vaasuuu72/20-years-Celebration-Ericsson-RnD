@@ -50,12 +50,6 @@
         button:hover {
             background-color: #45a049;
         }
-        .response-message {
-            margin-top: 20px;
-            padding: 15px;
-            border-radius: 4px;
-            display: none; /* Hidden by default */
-        }
         .success {
             background-color: #dff0d8;
             color: #3c763d;
@@ -76,41 +70,6 @@
             <input name="LastName" type="text" placeholder="Last Name" required>
             <button type="submit">Submit</button>
         </form>
-        <div id="responseMessage" class="response-message"></div>
     </div>
-
-    <script>
-        document.getElementById('infoForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-
-            const form = event.target;
-            const formData = new FormData(form);
-            const data = new URLSearchParams(formData);
-
-            fetch(form.action, {
-                method: 'POST',
-                body: data
-            })
-            .then(response => response.json())
-            .then(result => {
-                const responseMessage = document.getElementById('responseMessage');
-                responseMessage.style.display = 'block';
-
-                if (result.result === 'success') {
-                    responseMessage.className = 'response-message success';
-                    responseMessage.innerHTML = `<strong>Success!</strong> Your submission was successful. <br><strong>Name:</strong> ${result.name}<br><strong>Table Number:</strong> ${result.tableNumber}`;
-                } else {
-                    responseMessage.className = 'response-message error';
-                    responseMessage.innerHTML = `<strong>Error!</strong> ${result.error}`;
-                }
-            })
-            .catch(error => {
-                const responseMessage = document.getElementById('responseMessage');
-                responseMessage.className = 'response-message error';
-                responseMessage.style.display = 'block';
-                responseMessage.innerHTML = `<strong>Error!</strong> Something went wrong. Please try again later.`;
-            });
-        });
-    </script>
 </body>
 </html>
