@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ericsson RnD</title>
+    <title>Ericsson R&D - 20 Years Celebration</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: linear-gradient(to bottom right, #4CAF50, #008CBA);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -16,36 +16,41 @@
         }
         .form-container {
             background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 450px;
             width: 100%;
             text-align: center;
         }
-        h2 {
-            margin-bottom: 20px;
-            font-size: 24px;
-            text-align: center;
+        h3 {
+            font-size: 28px;
+            margin-bottom: 25px;
             color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: bold;
         }
         input[type="text"] {
             width: calc(100% - 22px);
-            padding: 10px;
-            margin-bottom: 15px;
+            padding: 12px;
+            margin-bottom: 20px;
             border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
+            border-radius: 6px;
+            font-size: 18px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         button {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             background-color: #4CAF50;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             color: white;
-            font-size: 16px;
+            font-size: 18px;
+            font-weight: bold;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
         button:hover {
             background-color: #45a049;
@@ -54,22 +59,42 @@
             background-color: #dff0d8;
             color: #3c763d;
             border: 1px solid #d6e9c6;
+            border-radius: 6px;
+            padding: 10px;
+            margin-top: 20px;
+            display: none;
         }
         .error {
             background-color: #f2dede;
             color: #a94442;
             border: 1px solid #ebccd1;
+            border-radius: 6px;
+            padding: 10px;
+            margin-top: 20px;
+            display: none;
         }
     </style>
 </head>
 <body>
     <div class="form-container">
-        <h3>Welcome to Ericsson R&D 20 Years Celebration!!</h3>
-        <form id="infoForm" method="POST" action="https://script.google.com/macros/s/AKfycbw2gSGQiL7CQ_OzbIL1cG7scQjEsWg8lMyllxSnXmvY9ZrB1nFo9AeEPtBvfjnhAqkE3Q/exec">
+        <h3>Ericsson R&D - 20 Years Celebration</h3>
+        <form id="infoForm" method="POST" action="">
             <input name="FirstName MiddleName" type="text" placeholder="First Name Middle Name" required>
             <input name="LastName" type="text" placeholder="Last Name" required>
             <button type="submit">Submit</button>
         </form>
+        <div id="responseMessage" class="success"></div>
     </div>
+
+    <script>
+        // Example script to handle form submission and show success/error messages
+        document.getElementById('infoForm').onsubmit = function(event) {
+            event.preventDefault();
+            var responseMessage = document.getElementById('responseMessage');
+            responseMessage.textContent = 'Thank you for submitting!';
+            responseMessage.style.display = 'block';
+            responseMessage.className = 'success';
+        };
+    </script>
 </body>
 </html>
