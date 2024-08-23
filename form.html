@@ -85,16 +85,5 @@
         </form>
         <div id="responseMessage" class="success"></div>
     </div>
-
-    <script>
-        // Example script to handle form submission and show success/error messages
-        document.getElementById('infoForm').onsubmit = function(event) {
-            event.preventDefault();
-            var responseMessage = document.getElementById('responseMessage');
-            responseMessage.textContent = 'Thank you for submitting!';
-            responseMessage.style.display = 'block';
-            responseMessage.className = 'success';
-        };
-    </script>
 </body>
 </html>
