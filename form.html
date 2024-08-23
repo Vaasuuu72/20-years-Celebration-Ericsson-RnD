@@ -120,11 +120,13 @@
         }
         h3 {
             font-size: 25px;
-            margin-bottom: 10%;
             color: #333;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-weight: bold;
+        }
+        header {
+            margin-bottom: 10%;
         }
         input[type="text"] {
             width: calc(100% - 22px);
@@ -175,7 +177,10 @@
         <img src="app banner 1.png" width="85%">
     </div>
     <div class="form-container" >
-        <h3>R&D Gurgaon</h3><h3> 20 years</h3>
+        <div class="header">
+      <h3>R&D Gurgaon</h3>
+      <h3>20 years</h3>
+    </div>
         <form id="infoForm" method="POST" action="https://script.google.com/macros/s/AKfycbw2gSGQiL7CQ_OzbIL1cG7scQjEsWg8lMyllxSnXmvY9ZrB1nFo9AeEPtBvfjnhAqkE3Q/exec">
             <input name="FirstName MiddleName" type="text" placeholder="First Name Middle Name" required>
             <input name="LastName" type="text" placeholder="Last Name" required>
