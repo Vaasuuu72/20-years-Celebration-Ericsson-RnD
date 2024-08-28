@@ -185,9 +185,17 @@
         <form id="infoForm" method="POST" action="https://script.google.com/macros/s/AKfycbw2gSGQiL7CQ_OzbIL1cG7scQjEsWg8lMyllxSnXmvY9ZrB1nFo9AeEPtBvfjnhAqkE3Q/exec">
             <input name="FirstName MiddleName" type="text" placeholder="First Name Middle Name" required>
             <input name="LastName" type="text" placeholder="Last Name" required>
+            <input name="Manager Name" type="text" placeholder="Manager's Name" required>
             <button type="submit">Submit</button>
-        </form>
-        <div id="responseMessage" class="success"></div>
+            <button type="submit" onclick="showPleaseWait()">Submit</button>
+            </form>
+            <div id="pleaseWaitMessage" style="display:none; margin-top: 10px; color: #333;">Please wait...</div>
+            <div id="responseMessage" class="success"></div>
     </div>
+    <script>
+        function showPleaseWait() {
+            document.getElementById("pleaseWaitMessage").style.display = "block";
+        }
+    </script>
 </body>
 </html>
