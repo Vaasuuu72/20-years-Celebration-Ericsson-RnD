@@ -126,7 +126,7 @@
         }
         header {
             text-align: center;
-            margin-bottom: 10%;
+            margin-bottom: 3%;
         }
         input[type="text"] {
             width: calc(100% - 22px);
@@ -147,6 +147,7 @@
             font-size: 18px;
             font-weight: bold;
             cursor: pointer;
+            margin-top: 5%;
             transition: background-color 0.3s ease;
         }
     </style>
@@ -166,7 +167,7 @@
             <input name="Manager Name" type="text" placeholder="Manager's Name" required>
             <button type="submit" onclick="showPleaseWait()">Submit</button>
             </form>
-            <div id="pleaseWaitMessage" style="display:none; margin-top: 10%; color: #333;">Please wait...</div>
+            <div id="pleaseWaitMessage" style="display:none; margin-bottom: 10%; color: #333;">Please wait...</div>
     </div>
     <script>
         function showPleaseWait() {
