@@ -107,7 +107,6 @@
             font-size: 14px;
                color: #242424;
                font-family: "Ericsson Hilda", Helvetica, Arial, sans-serif;
-              /* Better Font Rendering =========== */
               text-rendering: optimizeLegibility;
               -webkit-font-smoothing: antialiased;
               -moz-osx-font-smoothing: grayscale;
@@ -149,27 +148,7 @@
             font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s ease;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        .success {
-            background-color: #dff0d8;
-            color: #3c763d;
-            border: 1px solid #d6e9c6;
-            border-radius: 6px;
-            padding: 10px;
-            margin-top: 20px;
-            display: none;
-        }
-        .error {
-            background-color: #f2dede;
-            color: #a94442;
-            border: 1px solid #ebccd1;
-            border-radius: 6px;
-            padding: 10px;
-            margin-top: 20px;
-            display: none;
+            margin-bottom: 10%;
         }
     </style>
 </head>
@@ -189,7 +168,6 @@
             <button type="submit" onclick="showPleaseWait()">Submit</button>
             </form>
             <div id="pleaseWaitMessage" style="display:none; margin-top: 10px; color: #333;">Please wait...</div>
-            <div id="responseMessage" class="success"></div>
     </div>
     <script>
         function showPleaseWait() {
