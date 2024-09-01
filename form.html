@@ -145,20 +145,30 @@
             color: white;
             font-size: 18px;
         }
+        .input-group {
+            display: flex;
+            align-items: center; /* Aligns items vertically */
+        }
+        
         .custom-span {
-    background-color: #f0f0f0;
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px;
-    font-weight: bold;
-}
+            background-color: #f0f0f0;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-right: none; /* Removes the border between the span and the input */
+            border-radius: 4px 0 0 4px;
+            font-weight: bold;
+            display: flex;
+            align-items: center; /* Ensures the text inside the span is centered vertically */
+        }
+        
+        .custom-input {
+            width: 50%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 0 4px 4px 0;
+            box-sizing: border-box; /* Ensures padding doesn't affect the width */
+        }
 
-.custom-input {
-    width: 50%;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 0 4px 4px 0;
-}
     </style>
 </head>
 <body>
