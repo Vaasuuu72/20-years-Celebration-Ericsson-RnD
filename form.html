@@ -145,28 +145,17 @@
             color: white;
             font-size: 18px;
         }
-        .input-group {
-            display: flex;
-            align-items: center; /* Aligns items vertically */
+        .container span {
+            width: 50%;
+            text-align: right;
+            padding-right: 10px;
+            box-sizing: border-box;
         }
-        
-        .custom-span {
-            background-color: #f0f0f0;
-            padding: 5px 10px;
-            border: 1px solid #ccc;
-            border-right: none; /* Removes the border between the span and the input */
-            border-radius: 4px 0 0 4px;
-            font-weight: bold;
-            display: flex;
-            align-items: center; /* Ensures the text inside the span is centered vertically */
-        }
-        
-        .custom-input {
+
+        .container input {
             width: 50%;
             padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 0 4px 4px 0;
-            box-sizing: border-box; /* Ensures padding doesn't affect the width */
+            box-sizing: border-box;
         }
 
     </style>
@@ -179,7 +168,7 @@
     <div class="header" style = "text-align: center";>
       <h3>R&D GURGAON <br> 20 YEARS</h3>
    <div>
-  <div style="justify-content: center;">
+  <div style="justify-content: center;" class = "container">
   <form id="infoForm" method="POST" action="https://script.google.com/macros/s/AKfycbw2gSGQiL7CQ_OzbIL1cG7scQjEsWg8lMyllxSnXmvY9ZrB1nFo9AeEPtBvfjnhAqkE3Q/exec" style="width: 100%; max-width: 600px;">
     <span>EGIL</span>
         <input type="text" placeholder="" required>
