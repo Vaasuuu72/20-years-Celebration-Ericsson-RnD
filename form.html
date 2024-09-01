@@ -145,6 +145,20 @@
             color: white;
             font-size: 18px;
         }
+        .custom-span {
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    font-weight: bold;
+}
+
+.custom-input {
+    width: 50%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 0 4px 4px 0;
+}
     </style>
 </head>
 <body>
@@ -157,7 +171,10 @@
    <div>
   <div style="display: flex; justify-content: center;">
   <form id="infoForm" method="POST" action="https://script.google.com/macros/s/AKfycbw2gSGQiL7CQ_OzbIL1cG7scQjEsWg8lMyllxSnXmvY9ZrB1nFo9AeEPtBvfjnhAqkE3Q/exec" style="width: 100%; max-width: 600px;">
-    <input id="EGIL" name="EGIL No: " type="text" required="">
+    <div class="input-group-prepend">
+        <span class="custom-span">EGIL</span>
+    </div>
+    <input id="EGIL" class="custom-input" placeholder="" required type = "text">
     <button type="submit" onclick="showPleaseWait()" style="width: 100%;">Submit</button>
   </form>
 </div>
